@@ -1,0 +1,875 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "8d885fdc-506c-4925-b65e-76b6f71bbb1d",
+      "@type": "WorkflowCollection",
+      "name": "Sample - Forcepoint DLP - 1.0.0",
+      "description": "Forcepoint DLP used to prevent data leakage, ensure regulatory compliance, protect intellectual property, manage employee productivity, mitigate risks, and respond to security incidents within organizations.",
+      "visible": true,
+      "image": null,
+      "recordTags": [
+        "Forcepoint",
+        "forcepoint-dlp"
+      ],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "3a3726af-16f6-4af6-bade-2db5bc47f3ab",
+          "collection": "/api/3/workflow_collections/8d885fdc-506c-4925-b65e-76b6f71bbb1d",
+          "triggerLimit": null,
+          "description": "List incidents by ids.",
+          "name": "Get Incidents by IDs",
+          "tag": "#Forcepoint DLP",
+          "recordTags": [
+            "Forcepoint",
+            "forcepoint-dlp"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/e2353692-4f70-4303-961b-0b47f7b2aec6",
+          "steps": [
+            {
+              "uuid": "e2353692-4f70-4303-961b-0b47f7b2aec6",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "1715cb3d-2803-4d69-8d25-8be925694cdd",
+                "title": "Forcepoint DLP: Get Incidents by IDs",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "dd36b8d2-7578-474c-abec-acd8f3b03b0e",
+              "@type": "WorkflowStep",
+              "name": "Get Incidents by IDs",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Forcepoint DLP",
+                "config": "''",
+                "params": {
+                  "type": null,
+                  "ids": ""
+                },
+                "version": "1.0.0",
+                "connector": "forcepoint-dlp",
+                "operation": "get_incidents_by_ids",
+                "operationTitle": "Get Incidents by IDs",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "f95fa78c-eed6-4dc2-93fd-5d730a99ae55",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Incidents by IDs",
+              "sourceStep": "/api/3/workflow_steps/e2353692-4f70-4303-961b-0b47f7b2aec6",
+              "targetStep": "/api/3/workflow_steps/dd36b8d2-7578-474c-abec-acd8f3b03b0e"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "b8bb0123-6c76-4a4c-b554-0be8fcd26bde",
+          "collection": "/api/3/workflow_collections/8d885fdc-506c-4925-b65e-76b6f71bbb1d",
+          "triggerLimit": null,
+          "description": "List incidents by date range.",
+          "name": "Get Incidents by Date Range",
+          "tag": "#Forcepoint DLP",
+          "recordTags": [
+            "Forcepoint",
+            "forcepoint-dlp"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/6712ca5f-aa44-4573-87d5-cddbd561b93c",
+          "steps": [
+            {
+              "uuid": "6712ca5f-aa44-4573-87d5-cddbd561b93c",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "181255b4-1821-46f1-8b93-eabc1a3b1244",
+                "title": "Forcepoint DLP: Get Incidents by Date Range",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "f687c0b9-7cb0-4685-bc09-19999b9bbb1d",
+              "@type": "WorkflowStep",
+              "name": "Get Incidents by Date Range",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Forcepoint DLP",
+                "config": "''",
+                "params": {
+                  "type": null,
+                  "from_date": null,
+                  "to_date": null
+                },
+                "version": "1.0.0",
+                "connector": "forcepoint-dlp",
+                "operation": "get_incidents_by_date_range",
+                "operationTitle": "Get Incidents by Date Range",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "8ed452ad-9945-42af-8374-9538fddffed2",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Incidents by Date Range",
+              "sourceStep": "/api/3/workflow_steps/6712ca5f-aa44-4573-87d5-cddbd561b93c",
+              "targetStep": "/api/3/workflow_steps/f687c0b9-7cb0-4685-bc09-19999b9bbb1d"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "0195a26b-4759-449a-8731-9f0193b455fe",
+          "collection": "/api/3/workflow_collections/8d885fdc-506c-4925-b65e-76b6f71bbb1d",
+          "triggerLimit": null,
+          "description": "List incidents by action.",
+          "name": "Get Incidents by Action",
+          "tag": "#Forcepoint DLP",
+          "recordTags": [
+            "Forcepoint",
+            "forcepoint-dlp"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/1ab5f354-ba3c-4a71-8f46-91309f2bca86",
+          "steps": [
+            {
+              "uuid": "1ab5f354-ba3c-4a71-8f46-91309f2bca86",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "30154235-3bf6-4e5c-a321-b81d86ea8361",
+                "title": "Forcepoint DLP: Get Incidents by Action",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "9fff4cfa-5bfd-496a-9a6a-91ebd65c314a",
+              "@type": "WorkflowStep",
+              "name": "Get Incidents by Action",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Forcepoint DLP",
+                "config": "''",
+                "params": {
+                  "type": null,
+                  "from_date": null,
+                  "to_date": null,
+                  "action": null
+                },
+                "version": "1.0.0",
+                "connector": "forcepoint-dlp",
+                "operation": "get_incidents_by_action",
+                "operationTitle": "Get Incidents by Action",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "7021c764-7238-4084-a5b7-2a954fb64674",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Incidents by Action",
+              "sourceStep": "/api/3/workflow_steps/1ab5f354-ba3c-4a71-8f46-91309f2bca86",
+              "targetStep": "/api/3/workflow_steps/9fff4cfa-5bfd-496a-9a6a-91ebd65c314a"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "e649bd77-6d86-4408-a546-b66c864364c8",
+          "collection": "/api/3/workflow_collections/8d885fdc-506c-4925-b65e-76b6f71bbb1d",
+          "triggerLimit": null,
+          "description": "List incidents by severity.",
+          "name": "Get Incidents by Severity",
+          "tag": "#Forcepoint DLP",
+          "recordTags": [
+            "Forcepoint",
+            "forcepoint-dlp"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/4e68a5b9-b363-4a20-84ad-9d1028a87627",
+          "steps": [
+            {
+              "uuid": "4e68a5b9-b363-4a20-84ad-9d1028a87627",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "09600e45-b275-4f62-a8f5-ee716c76a426",
+                "title": "Forcepoint DLP: Get Incidents by Severity",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "ab11a22e-4e07-40f6-86ca-794a20d11d29",
+              "@type": "WorkflowStep",
+              "name": "Get Incidents by Severity",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Forcepoint DLP",
+                "config": "''",
+                "params": {
+                  "type": null,
+                  "from_date": null,
+                  "to_date": null,
+                  "severity": null
+                },
+                "version": "1.0.0",
+                "connector": "forcepoint-dlp",
+                "operation": "get_incidents_by_severity",
+                "operationTitle": "Get Incidents by Severity",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "a1a9c854-d3a1-40e3-9b00-3df3ad58d776",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Incidents by Severity",
+              "sourceStep": "/api/3/workflow_steps/4e68a5b9-b363-4a20-84ad-9d1028a87627",
+              "targetStep": "/api/3/workflow_steps/ab11a22e-4e07-40f6-86ca-794a20d11d29"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "bba0039c-51bb-4f56-830e-5b8ebc9b22e7",
+          "collection": "/api/3/workflow_collections/8d885fdc-506c-4925-b65e-76b6f71bbb1d",
+          "triggerLimit": null,
+          "description": "List incidents by status.",
+          "name": "Get Incidents by Status",
+          "tag": "#Forcepoint DLP",
+          "recordTags": [
+            "Forcepoint",
+            "forcepoint-dlp"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/56222048-1e2a-432d-8c46-912adc8cae27",
+          "steps": [
+            {
+              "uuid": "56222048-1e2a-432d-8c46-912adc8cae27",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "d881cc93-f6ba-4c63-882c-01ecd7f364ae",
+                "title": "Forcepoint DLP: Get Incidents by Status",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "afc2d4e1-8c3f-4c8d-8bb7-c3268bf4bb5e",
+              "@type": "WorkflowStep",
+              "name": "Get Incidents by Status",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Forcepoint DLP",
+                "config": "''",
+                "params": {
+                  "type": null,
+                  "from_date": null,
+                  "to_date": null,
+                  "status": null
+                },
+                "version": "1.0.0",
+                "connector": "forcepoint-dlp",
+                "operation": "get_incidents_by_status",
+                "operationTitle": "Get Incidents by Status",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "ceaf1d33-b54b-4411-8030-fa68bcc55f27",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Incidents by Status",
+              "sourceStep": "/api/3/workflow_steps/56222048-1e2a-432d-8c46-912adc8cae27",
+              "targetStep": "/api/3/workflow_steps/afc2d4e1-8c3f-4c8d-8bb7-c3268bf4bb5e"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "d4aaeb92-9de4-436b-861f-987ee2ceeb66",
+          "collection": "/api/3/workflow_collections/8d885fdc-506c-4925-b65e-76b6f71bbb1d",
+          "triggerLimit": null,
+          "description": "List incidents by policy_name.",
+          "name": "Get Incidents by Policy Name",
+          "tag": "#Forcepoint DLP",
+          "recordTags": [
+            "Forcepoint",
+            "forcepoint-dlp"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/bf101467-84e3-457a-9f69-034a3ee45c42",
+          "steps": [
+            {
+              "uuid": "bf101467-84e3-457a-9f69-034a3ee45c42",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "1f73a1ed-047f-4b25-8916-ac3d324ca7c3",
+                "title": "Forcepoint DLP: Get Incidents by Policy Name",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "3f04092c-077b-4a52-ab31-ee0bb1f7e97d",
+              "@type": "WorkflowStep",
+              "name": "Get Incidents by Policy Name",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Forcepoint DLP",
+                "config": "''",
+                "params": {
+                  "type": null,
+                  "from_date": null,
+                  "to_date": null,
+                  "policies": ""
+                },
+                "version": "1.0.0",
+                "connector": "forcepoint-dlp",
+                "operation": "get_incidents_by_policy_name",
+                "operationTitle": "Get Incidents by Policy Name",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "62218860-9751-436f-bc1e-f83bacc4f83e",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Incidents by Policy Name",
+              "sourceStep": "/api/3/workflow_steps/bf101467-84e3-457a-9f69-034a3ee45c42",
+              "targetStep": "/api/3/workflow_steps/3f04092c-077b-4a52-ab31-ee0bb1f7e97d"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "5ea2f259-392d-44d0-9a64-3d37ae78ac2b",
+          "collection": "/api/3/workflow_collections/8d885fdc-506c-4925-b65e-76b6f71bbb1d",
+          "triggerLimit": null,
+          "description": "Retrieves a list of all incident on a registered system.",
+          "name": "Get List Of Incident By Filter",
+          "tag": "#Forcepoint DLP",
+          "recordTags": [
+            "Forcepoint",
+            "forcepoint-dlp"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/41c91ae9-cc17-4a0a-8d0e-3ce06f8ab602",
+          "steps": [
+            {
+              "uuid": "41c91ae9-cc17-4a0a-8d0e-3ce06f8ab602",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "f9fe7c79-a403-4157-9a3c-a0ac934f29fe",
+                "title": "Forcepoint DLP: Get List Of Incident By Filter",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "e35d11dc-7ea6-4442-88e8-9cc3eface312",
+              "@type": "WorkflowStep",
+              "name": "Get List Of Incident By Filter",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Forcepoint DLP",
+                "config": "''",
+                "params": {
+                  "type": null,
+                  "sort_by": "INSERT_DATE",
+                  "from_date": null,
+                  "to_date": null,
+                  "detected_by": null,
+                  "analyzed_by": "",
+                  "event_id": "",
+                  "destination": "",
+                  "policies": "",
+                  "action": null,
+                  "source": "",
+                  "status": null,
+                  "severity": null,
+                  "endpoint_type": null,
+                  "channel": null,
+                  "assigned_to": "",
+                  "tag": ""
+                },
+                "version": "1.0.0",
+                "connector": "forcepoint-dlp",
+                "operation": "get_list_of_incidents_by_filter",
+                "operationTitle": "Get List Of Incident By Filter",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "713e4adb-47b1-47e0-baef-c151a30f87ef",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get List Of Incident By Filter",
+              "sourceStep": "/api/3/workflow_steps/41c91ae9-cc17-4a0a-8d0e-3ce06f8ab602",
+              "targetStep": "/api/3/workflow_steps/e35d11dc-7ea6-4442-88e8-9cc3eface312"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "9207c1b2-96e1-4c96-a3f4-3d5a6ed16908",
+          "collection": "/api/3/workflow_collections/8d885fdc-506c-4925-b65e-76b6f71bbb1d",
+          "triggerLimit": null,
+          "description": "Update Incident Status By Incident ID And Partition Index.",
+          "name": "Update Incident Status By Incident ID And Partition Index",
+          "tag": "#Forcepoint DLP",
+          "recordTags": [
+            "Forcepoint",
+            "forcepoint-dlp"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/5165c8b9-ac7e-436e-8254-0176a8b7eb0e",
+          "steps": [
+            {
+              "uuid": "5165c8b9-ac7e-436e-8254-0176a8b7eb0e",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "61bf499f-5073-4f2c-8bbb-376be1616c70",
+                "title": "Forcepoint DLP: Update Incident Status By Incident ID And Partition Index",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "69f4f675-3f18-4388-832a-e774dc8d0453",
+              "@type": "WorkflowStep",
+              "name": "Update Incident Status By Incident ID And Partition Index",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Forcepoint DLP",
+                "config": "''",
+                "params": {
+                  "type": null,
+                  "action_type": null
+                },
+                "version": "1.0.0",
+                "connector": "forcepoint-dlp",
+                "operation": "update_incident_status_by_incident_id_and_partition_index",
+                "operationTitle": "Update Incident Status By Incident ID And Partition Index",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "8f037ea8-6478-47ef-a010-b6099fae0c2e",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Update Incident Status By Incident ID And Partition Index",
+              "sourceStep": "/api/3/workflow_steps/5165c8b9-ac7e-436e-8254-0176a8b7eb0e",
+              "targetStep": "/api/3/workflow_steps/69f4f675-3f18-4388-832a-e774dc8d0453"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "248a72a9-9f58-48b0-8635-a4e906ea3f1c",
+          "collection": "/api/3/workflow_collections/8d885fdc-506c-4925-b65e-76b6f71bbb1d",
+          "triggerLimit": null,
+          "description": "Update incident status by scan partitions",
+          "name": "Update Incident Status By Scan Partitions",
+          "tag": "#Forcepoint DLP",
+          "recordTags": [
+            "Forcepoint",
+            "forcepoint-dlp"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/5218f5aa-783b-4a6b-978f-950fee72c1f0",
+          "steps": [
+            {
+              "uuid": "5218f5aa-783b-4a6b-978f-950fee72c1f0",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "e5fa3547-fcc8-41fe-b8f1-5a22b384cdef",
+                "title": "Forcepoint DLP: Update Incident Status By Scan Partitions",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "30540a7b-677f-474a-bc26-1ce7a42b55ed",
+              "@type": "WorkflowStep",
+              "name": "Update Incident Status By Scan Partitions",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Forcepoint DLP",
+                "config": "''",
+                "params": {
+                  "type": null,
+                  "action_type": null,
+                  "scan_partitions": "NONE"
+                },
+                "version": "1.0.0",
+                "connector": "forcepoint-dlp",
+                "operation": "update_incident_status_by_scan_partitions",
+                "operationTitle": "Update Incident Status By Scan Partitions",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "5d3db145-3e51-4690-8dc1-e52322abbb67",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Update Incident Status By Scan Partitions",
+              "sourceStep": "/api/3/workflow_steps/5218f5aa-783b-4a6b-978f-950fee72c1f0",
+              "targetStep": "/api/3/workflow_steps/30540a7b-677f-474a-bc26-1ce7a42b55ed"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "46909e10-d5b3-425a-aef0-6bc2c0f82d1e",
+          "collection": "/api/3/workflow_collections/8d885fdc-506c-4925-b65e-76b6f71bbb1d",
+          "triggerLimit": null,
+          "description": "Update incident status by event ids",
+          "name": "Update Incident Status By Event IDs",
+          "tag": "#Forcepoint DLP",
+          "recordTags": [
+            "Forcepoint",
+            "forcepoint-dlp"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/b887d5c6-459c-4a82-ab27-48656950f3d4",
+          "steps": [
+            {
+              "uuid": "b887d5c6-459c-4a82-ab27-48656950f3d4",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "91c5b30e-0ae3-4a6e-a8d6-875e741ca754",
+                "title": "Forcepoint DLP: Update Incident Status By Event IDs",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "b550ca7c-33a0-4a1f-b622-23d0d54fda93",
+              "@type": "WorkflowStep",
+              "name": "Update Incident Status By Event IDs",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Forcepoint DLP",
+                "config": "''",
+                "params": {
+                  "type": null,
+                  "event_ids": "",
+                  "action_type": null
+                },
+                "version": "1.0.0",
+                "connector": "forcepoint-dlp",
+                "operation": "update_incident_status_by_event_ids",
+                "operationTitle": "Update Incident Status By Event IDs",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "092ffd4c-72be-4aea-bb5a-163a3dd74bd9",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Update Incident Status By Event IDs",
+              "sourceStep": "/api/3/workflow_steps/b887d5c6-459c-4a82-ab27-48656950f3d4",
+              "targetStep": "/api/3/workflow_steps/b550ca7c-33a0-4a1f-b622-23d0d54fda93"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

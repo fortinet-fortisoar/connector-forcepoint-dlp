@@ -1,0 +1,1599 @@
+{
+    "name": "forcepoint-dlp",
+    "version": "1.0.0",
+    "label": "Forcepoint DLP",
+    "description": "Forcepoint DLP used to prevent data leakage, ensure regulatory compliance, protect intellectual property, manage employee productivity, mitigate risks, and respond to security incidents within organizations.",
+    "publisher": "spryIQ.co",
+    "icon_small_name": "small.png",
+    "icon_large_name": "large.png",
+    "cs_compatible": true,
+    "cs_approved": false,
+    "category": "Network Security",
+    "help_online": "https://github.com/jitesh-spryiq/connector-forcepoint-dlp/blob/develop/docs/ForcePointDLPConnectorDoc.md",
+    "configuration": {
+        "fields": [
+            {
+                "title": "Server URL",
+                "type": "text",
+                "name": "server_url",
+                "required": true,
+                "visible": true,
+                "editable": true,
+                "value": "",
+                "placeholder": "Server IP Address or Sever Name ",
+                "tooltip": "Specify the URL of the Forcepoint dlp server to connect and perform automated operations.",
+                "description": "Specify the URL of the Forcepoint dlp server to connect and perform automated operations."
+            },
+            {
+                "title": "Username",
+                "type": "text",
+                "name": "username",
+                "required": true,
+                "visible": true,
+                "editable": true,
+                "value": "",
+                "tooltip": "Username used to access the Forcepoint DLP server to which you will connect and perform the automated operations.",
+                "description": "Username used to access the Forcepoint DLP server to which you will connect and perform the automated operations."
+            },
+            {
+                "title": "Password",
+                "type": "password",
+                "name": "password",
+                "required": true,
+                "visible": true,
+                "editable": true,
+                "value": "",
+                "tooltip": "Password used to access the Forcepoint DLP server to which you will connect and perform the automated operations.",
+                "description": "Password used to access the Forcepoint DLP server to which you will connect and perform the automated operations."
+            },
+            {
+                "title": "Protocol",
+                "type": "select",
+                "name": "protocol",
+                "required": true,
+                "visible": true,
+                "editable": true,
+                "value": "https",
+                "tooltip": "Protocol that will be used to communicate with the Forcepoint DLP server. Choose either http and https.By default, this is set to https.",
+                "description": "Protocol that will be used to communicate with the Forcepoint DLP server. Choose either http and https.By default, this is set to https.",
+                "options": [
+                    "http",
+                    "https"
+                ]
+            },
+            {
+                "title": "Port",
+                "type": "integer",
+                "name": "port",
+                "required": true,
+                "visible": true,
+                "editable": true,
+                "value": 9443,
+                "tooltip": "Port number used for connecting to the Forcepoint DLP server.Defaults to 9443 for the https protocol.",
+                "description": "Port number used for connecting to the Forcepoint DLP server.Defaults to 9443 for the https protocol."
+            },
+            {
+                "title": "Verify SSL",
+                "type": "checkbox",
+                "name": "verify_ssl",
+                "required": false,
+                "visible": true,
+                "editable": true,
+                "value": false,
+                "description": "Specify whether the SSL certificate for the server is to be verified or not.By default, this option is set as True."
+            }
+        ]
+    },
+    "operations": [
+        {
+            "title": "Get Incidents by IDs",
+            "operation": "get_incidents_by_ids",
+            "description": "List incidents by ids.",
+            "annotation": "get_incidents_by_ids",
+            "category": "investigation",
+			"output_schema": [{
+				"incidents": [
+				{
+					"id": "",
+					"severity": "",
+					"action": "",
+					"tag": "",
+					"status": "",
+					"source": 
+					{
+						"email_address": ""
+					}
+				}
+				],
+				"event_id": "",
+				"maximum_matches": "",
+				"transaction_size": "",
+				"analyzed_by": "",
+				"ignored_incidents": "",
+				"event_time": "",
+				"incident_time": "",
+				"channel": "",
+				"policies": "",
+				"partition_index": "",
+				"destination": "",
+				"detected_by": "",
+				"details": "",
+				"released_incident": "",
+				"violation_triggers": "",
+				"file_name": "",
+				"total_count": "",
+				"total_returned": "",
+				"not_found_ids": [""]
+					}
+			],
+            "parameters": [
+                {
+                    "title": "Type",
+                    "type": "select",
+                    "name": "type",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": null,
+                    "tooltip": "Select option 'INCIDENTS' or 'DISCOVERY'.",
+                    "description": "Select option 'INCIDENTS' or 'DISCOVERY'.",
+                    "options": [
+                        "INCIDENTS",
+                        "DISCOVERY"
+                    ]
+                },
+                {
+                    "title": "IDs",
+                    "type": "text",
+                    "name": "ids",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "placeholder": "e.g:123,323",
+                    "description": "Specify the ids comma separated value that you want to retrieve from Forecpoint DLP.",
+                    "tooltip": "Specify the ids comma separated value that you want to retrieve from Forecpoint DLP."
+                }
+            ]
+        },
+        {
+            "title": "Get Incidents by Date Range",
+            "operation": "get_incidents_by_date_range",
+            "description": "List incidents by date range.",
+            "annotation": "get_incidents_by_date_range",
+            "category": "investigation",
+			"output_schema": [{
+				"incidents": [
+				{
+					"id": "",
+					"severity": "",
+					"action": "",
+					"tag": "",
+					"status": "",
+					"source": 
+					{
+						"email_address": ""
+					}
+				}
+				],
+				"event_id": "",
+				"maximum_matches": "",
+				"transaction_size": "",
+				"analyzed_by": "",
+				"ignored_incidents": "",
+				"event_time": "",
+				"incident_time": "",
+				"channel": "",
+				"policies": "",
+				"partition_index": "",
+				"destination": "",
+				"detected_by": "",
+				"details": "",
+				"released_incident": "",
+				"violation_triggers": "",
+				"file_name": "",
+				"total_count": "",
+				"total_returned": "",
+				"not_found_ids": [""]
+					}
+			],
+            "parameters": [
+                {
+                    "title": "Type",
+                    "type": "select",
+                    "name": "type",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": null,
+                    "tooltip": "Select option 'INCIDENTS' or 'DISCOVERY'.",
+                    "description": "Select option 'INCIDENTS' or 'DISCOVERY'.",
+                    "options": [
+                        "INCIDENTS",
+                        "DISCOVERY"
+                    ]
+                },
+                {
+                    "title": "From Date",
+                    "type": "datetime",
+                    "name": "from_date",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": null,
+                    "tooltip": "Specify 'from date' to fetch data from Forcepoint DLP server.",
+                    "description": "Specify 'from date' to fetch data from Forcepoint DLP server."
+                },
+                {
+                    "title": "To Date",
+                    "type": "datetime",
+                    "name": "to_date",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": null,
+                    "tooltip": "Specify 'to date' to fetch data from Forcepoint DLP server.",
+                    "description": "Specify 'to date' to fetch data from Forcepoint DLP server."
+                }
+            ]
+        },
+        {
+            "title": "Get Incidents by Action",
+            "operation": "get_incidents_by_action",
+            "description": "List incidents by action.",
+            "annotation": "get_incidents_by_action",
+            "category": "investigation",
+			"output_schema": [{
+				"incidents": [
+				{
+					"id": "",
+					"severity": "",
+					"action": "",
+					"tag": "",
+					"status": "",
+					"source": 
+					{
+						"email_address": ""
+					}
+				}
+				],
+				"event_id": "",
+				"maximum_matches": "",
+				"transaction_size": "",
+				"analyzed_by": "",
+				"ignored_incidents": "",
+				"event_time": "",
+				"incident_time": "",
+				"channel": "",
+				"policies": "",
+				"partition_index": "",
+				"destination": "",
+				"detected_by": "",
+				"details": "",
+				"released_incident": "",
+				"violation_triggers": "",
+				"file_name": "",
+				"total_count": "",
+				"total_returned": "",
+				"not_found_ids": [""]
+					}
+			],
+            "parameters": [
+                {
+                    "title": "Type",
+                    "type": "select",
+                    "name": "type",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": null,
+                    "tooltip": "Select option 'INCIDENTS' or 'DISCOVERY'.",
+                    "description": "Select option 'INCIDENTS' or 'DISCOVERY'.",
+                    "options": [
+                        "INCIDENTS",
+                        "DISCOVERY"
+                    ]
+                },
+                {
+                    "title": "From Date",
+                    "type": "datetime",
+                    "name": "from_date",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": null,
+                    "tooltip": "Specify 'from date' to fetch data from Forcepoint DLP server.",
+                    "description": "Specify 'from date' to fetch data from Forcepoint DLP server."
+                },
+                {
+                    "title": "To Date",
+                    "type": "datetime",
+                    "name": "to_date",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": null,
+                    "tooltip": "Specify 'to date' to fetch data from Forcepoint DLP server.",
+                    "description": "Specify 'to date' to fetch data from Forcepoint DLP server."
+                },
+                {
+                    "title": "Action",
+                    "type": "select",
+                    "name": "action",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": null,
+                    "tooltip": "Specify 'action' to fetch data from Forcepoint DLP server.",
+                    "description": "Specify 'action' to fetch data from Forcepoint DLP server.",
+                    "options": [
+                        "AUDITED",
+                        "QUARANTINED",
+                        "BLOCKED",
+                        "ENCRYPTED",
+                        "RELEASED",
+                        "ESG_ACTION",
+                        "QUARANTINE_WITH_NOTE",
+                        "UNSHARE_EXTERNAL",
+                        "UNSHARE_ALL",
+                        "UNSHARE_INTERNAL"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Get Incidents by Severity",
+            "operation": "get_incidents_by_severity",
+            "description": "List incidents by severity.",
+            "annotation": "get_incidents_by_severity",
+            "category": "investigation",
+			"output_schema": [{
+				"incidents": [
+				{
+					"id": "",
+					"severity": "",
+					"action": "",
+					"tag": "",
+					"status": "",
+					"source": 
+					{
+						"email_address": ""
+					}
+				}
+				],
+				"event_id": "",
+				"maximum_matches": "",
+				"transaction_size": "",
+				"analyzed_by": "",
+				"ignored_incidents": "",
+				"event_time": "",
+				"incident_time": "",
+				"channel": "",
+				"policies": "",
+				"partition_index": "",
+				"destination": "",
+				"detected_by": "",
+				"details": "",
+				"released_incident": "",
+				"violation_triggers": "",
+				"file_name": "",
+				"total_count": "",
+				"total_returned": "",
+				"not_found_ids": [""]
+					}
+			],
+            "parameters": [
+                {
+                    "title": "Type",
+                    "type": "select",
+                    "name": "type",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": null,
+                    "tooltip": "Select option 'INCIDENTS' or 'DISCOVERY'.",
+                    "description": "Select option 'INCIDENTS' or 'DISCOVERY'.",
+                    "options": [
+                        "INCIDENTS",
+                        "DISCOVERY"
+                    ]
+                },
+                {
+                    "title": "From Date",
+                    "type": "datetime",
+                    "name": "from_date",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": null,
+                    "tooltip": "Specify 'from date' to fetch data from Forcepoint DLP server.",
+                    "description": "Specify 'from date' to fetch data from Forcepoint DLP server."
+                },
+                {
+                    "title": "To Date",
+                    "type": "datetime",
+                    "name": "to_date",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": null,
+                    "tooltip": "Specify 'to date' to fetch data from Forcepoint DLP server.",
+                    "description": "Specify 'to date' to fetch data from Forcepoint DLP server."
+                },
+                {
+                    "title": "Severity",
+                    "type": "select",
+                    "name": "severity",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": null,
+                    "tooltip": "Specify 'severity' to fetch data from Forcepoint DLP server.",
+                    "description": "Specify 'severity' to fetch data from Forcepoint DLP server.",
+                    "options": [
+                        "HIGH",
+                        "MEDIUM",
+                        "LOW"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Get Incidents by Status",
+            "operation": "get_incidents_by_status",
+            "description": "List incidents by status.",
+            "annotation": "get_incidents_by_status",
+            "category": "investigation",
+			"output_schema": [{
+				"incidents": [
+				{
+					"id": "",
+					"severity": "",
+					"action": "",
+					"tag": "",
+					"status": "",
+					"source": 
+					{
+						"email_address": ""
+					}
+				}
+				],
+				"event_id": "",
+				"maximum_matches": "",
+				"transaction_size": "",
+				"analyzed_by": "",
+				"ignored_incidents": "",
+				"event_time": "",
+				"incident_time": "",
+				"channel": "",
+				"policies": "",
+				"partition_index": "",
+				"destination": "",
+				"detected_by": "",
+				"details": "",
+				"released_incident": "",
+				"violation_triggers": "",
+				"file_name": "",
+				"total_count": "",
+				"total_returned": "",
+				"not_found_ids": [""]
+					}
+			],
+            "parameters": [
+                {
+                    "title": "Type",
+                    "type": "select",
+                    "name": "type",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": null,
+                    "tooltip": "Select option 'INCIDENTS' or 'DISCOVERY'.",
+                    "description": "Select option 'INCIDENTS' or 'DISCOVERY'.",
+                    "options": [
+                        "INCIDENTS",
+                        "DISCOVERY"
+                    ]
+                },
+                {
+                    "title": "From Date",
+                    "type": "datetime",
+                    "name": "from_date",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": null,
+                    "tooltip": "Specify 'from date' to fetch data from Forcepoint DLP server.",
+                    "description": "Specify 'from date' to fetch data from Forcepoint DLP server."
+                },
+                {
+                    "title": "To Date",
+                    "type": "datetime",
+                    "name": "to_date",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": null,
+                    "tooltip": "Specify 'to date' to fetch data from Forcepoint DLP server.",
+                    "description": "Specify 'to date' to fetch data from Forcepoint DLP server."
+                },
+                {
+                    "title": "Status",
+                    "type": "select",
+                    "name": "status",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": null,
+                    "tooltip": "Specify 'status' to fetch data from Forcepoint DLP server.",
+                    "description": "Specify 'status' to fetch data from Forcepoint DLP server.",
+                    "options": [
+                        "NEW",
+                        "IN_PROCESS",
+                        "CLOSE",
+                        "FALSE_POSITIVE",
+                        "ESCALATED"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Get Incidents by Policy Name",
+            "operation": "get_incidents_by_policy_name",
+            "description": "List incidents by policy_name.",
+            "annotation": "get_incidents_by_policy_name",
+            "category": "investigation",
+			"output_schema": [{
+				"incidents": [
+				{
+					"id": "",
+					"severity": "",
+					"action": "",
+					"tag": "",
+					"status": "",
+					"source": 
+					{
+						"email_address": ""
+					}
+				}
+				],
+				"event_id": "",
+				"maximum_matches": "",
+				"transaction_size": "",
+				"analyzed_by": "",
+				"ignored_incidents": "",
+				"event_time": "",
+				"incident_time": "",
+				"channel": "",
+				"policies": "",
+				"partition_index": "",
+				"destination": "",
+				"detected_by": "",
+				"details": "",
+				"released_incident": "",
+				"violation_triggers": "",
+				"file_name": "",
+				"total_count": "",
+				"total_returned": "",
+				"not_found_ids": [""]
+					}
+			],
+            "parameters": [
+                {
+                    "title": "Type",
+                    "type": "select",
+                    "name": "type",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": null,
+                    "tooltip": "Select option 'INCIDENTS' or 'DISCOVERY'.",
+                    "description": "Select option 'INCIDENTS' or 'DISCOVERY'.",
+                    "options": [
+                        "INCIDENTS",
+                        "DISCOVERY"
+                    ]
+                },
+                {
+                    "title": "From Date",
+                    "type": "datetime",
+                    "name": "from_date",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": null,
+                    "tooltip": "Specify 'from date' to fetch data from Forcepoint DLP server.",
+                    "description": "Specify 'from date' to fetch data from Forcepoint DLP server."
+                },
+                {
+                    "title": "To Date",
+                    "type": "datetime",
+                    "name": "to_date",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": null,
+                    "tooltip": "Specify 'to date' to fetch data from Forcepoint DLP server.",
+                    "description": "Specify 'to date' to fetch data from Forcepoint DLP server."
+                },
+                {
+                    "title": "Policies",
+                    "type": "text",
+                    "name": "policies",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "placeholder": "e.g: PCI",
+                    "tooltip": "Specify 'policies' to fetch data from Forcepoint DLP server.",
+                    "description": "Specify 'policies' to fetch data from Forcepoint DLP server."
+                }
+            ]
+        },
+        {
+            "title": "Get List Of Incident By Filter",
+            "operation": "get_list_of_incidents_by_filter",
+            "annotation": "get_list_of_incidents_by_filter",
+            "tooltip": "Retrieves a list of all incident on a registered system.",
+            "description": "Retrieves a list of all incident on a registered system.",
+            "category": "investigation",
+			"output_schema": [{
+				"incidents": [
+				{
+					"id": "",
+					"severity": "",
+					"action": "",
+					"tag": "",
+					"status": "",
+					"source": 
+					{
+						"email_address": ""
+					}
+				}
+				],
+				"event_id": "",
+				"maximum_matches": "",
+				"transaction_size": "",
+				"analyzed_by": "",
+				"ignored_incidents": "",
+				"event_time": "",
+				"incident_time": "",
+				"channel": "",
+				"policies": "",
+				"partition_index": "",
+				"destination": "",
+				"detected_by": "",
+				"details": "",
+				"released_incident": "",
+				"violation_triggers": "",
+				"file_name": "",
+				"total_count": "",
+				"total_returned": "",
+				"not_found_ids": [""]
+					}
+			],
+            "parameters": [
+                {
+                    "title": "Type",
+                    "type": "select",
+                    "name": "type",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": null,
+                    "tooltip": "Select option 'INCIDENTS' or 'DISCOVERY'.",
+                    "description": "Select option 'INCIDENTS' or 'DISCOVERY'.",
+                    "options": [
+                        "INCIDENTS",
+                        "DISCOVERY"
+                    ]
+                },
+                {
+                    "title": "Sort By",
+                    "type": "text",
+                    "name": "sort_by",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "value": "INSERT_DATE",
+                    "tooltip": "Specify 'sort by' to fetch data from Forcepoint DLP server.",
+                    "description": "Specify 'sort by' to fetch data from Forcepoint DLP server."
+                },
+                {
+                    "title": "From Date",
+                    "type": "datetime",
+                    "name": "from_date",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": null,
+                    "tooltip": "Specify 'from date' to fetch data from Forcepoint DLP server.",
+                    "description": "Specify 'from date' to fetch data from Forcepoint DLP server."
+                },
+                {
+                    "title": "To Date",
+                    "type": "datetime",
+                    "name": "to_date",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": null,
+                    "tooltip": "Specify 'to date' to fetch data from Forcepoint DLP server.",
+                    "description": "Specify 'to date' to fetch data from Forcepoint DLP server."
+                },
+                {
+                    "title": "Detected By",
+                    "type": "text",
+                    "name": "detected_by",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "value": null,
+                    "placeholder": "e.g: Endpoint Agent",
+                    "tooltip": "Specify 'detected by' to fetch data from Forcepoint DLP server.",
+                    "description": "Specify 'detected by' to fetch data from Forcepoint DLP server."
+                },
+                {
+                    "title": "Analyzed By",
+                    "type": "text",
+                    "name": "analyzed_by",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "placeholder": "e.g: Policy Engine 100190120a",
+                    "tooltip": "Specify 'Policy Engine ID' to fetch data from Forcepoint DLP server.",
+                    "description": "Specify 'Policy Engine ID' to fetch data from Forcepoint DLP server."
+                },
+                {
+                    "title": "Event ID",
+                    "type": "integer",
+                    "name": "event_id",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "placeholder": "e.g: 5121411628328991975",
+                    "tooltip": "Specify 'event id' to fetch data from Forcepoint DLP server.",
+                    "description": "Specify 'event id' to fetch data from Forcepoint DLP server."
+                },
+                {
+                    "title": "Destination",
+                    "type": "text",
+                    "name": "destination",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "placeholder": "e.g: Windows Portable Device (WPD)",
+                    "tooltip": "Specify 'destination' to fetch data from Forcepoint DLP server.",
+                    "description": "Specify 'destination' to fetch data from Forcepoint DLP server."
+                },
+                {
+                    "title": "Policies",
+                    "type": "text",
+                    "name": "policies",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "placeholder": "e.g: PCI",
+                    "tooltip": "Specify 'policies' to fetch data from Forcepoint DLP server.",
+                    "description": "Specify 'policies' to fetch data from Forcepoint DLP server."
+                },
+                {
+                    "title": "Action",
+                    "type": "select",
+                    "name": "action",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "value": null,
+                    "tooltip": "Specify 'action' to fetch data from Forcepoint DLP server.",
+                    "description": "Specify 'action' to fetch data from Forcepoint DLP server.",
+                    "options": [
+                        "AUDITED",
+                        "QUARANTINED",
+                        "BLOCKED",
+                        "ENCRYPTED",
+                        "RELEASED",
+                        "ESG_ACTION",
+                        "QUARANTINE_WITH_NOTE",
+                        "UNSHARE_EXTERNAL",
+                        "UNSHARE_ALL",
+                        "UNSHARE_INTERNAL"
+                    ]
+                },
+                {
+                    "title": "Source",
+                    "type": "text",
+                    "name": "source",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "placeholder": "e.g: DESKTOP-3NG4NN6\\Lenovo",
+                    "tooltip": "Specify 'source' to fetch data from Forcepoint DLP server.",
+                    "description": "Specify 'source' to fetch data from Forcepoint DLP server."
+                },
+                {
+                    "title": "Status",
+                    "type": "select",
+                    "name": "status",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "value": null,
+                    "tooltip": "Specify 'status' to fetch data from Forcepoint DLP server.",
+                    "description": "Specify 'status' to fetch data from Forcepoint DLP server.",
+                    "options": [
+                        "NEW",
+                        "IN_PROCESS",
+                        "CLOSE",
+                        "FALSE_POSITIVE",
+                        "ESCALATED"
+                    ]
+                },
+                {
+                    "title": "Severity",
+                    "type": "select",
+                    "name": "severity",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "value": null,
+                    "tooltip": "Specify 'severity' to fetch data from Forcepoint DLP server.",
+                    "description": "Specify 'severity' to fetch data from Forcepoint DLP server.",
+                    "options": [
+                        "HIGH",
+                        "MEDIUM",
+                        "LOW"
+                    ]
+                },
+                {
+                    "title": "Endpoint Type",
+                    "type": "select",
+                    "name": "endpoint_type",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "value": null,
+                    "tooltip": "Specify 'endpoint type' to fetch data from Forcepoint DLP server.",
+                    "description": "Specify 'endpoint type' to fetch data from Forcepoint DLP server.",
+                    "options": [
+                        "LAPTOP",
+                        "DESKTOP",
+                        "NA"
+                    ]
+                },
+                {
+                    "title": "Channel",
+                    "type": "select",
+                    "name": "channel",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "value": null,
+                    "tooltip": "Specify 'channel' to fetch data from Forcepoint DLP server.",
+                    "description": "Specify 'channel' to fetch data from Forcepoint DLP server.",
+                    "options": [
+                        "EMAIL",
+                        "ENDPOINT_EMAIL",
+                        "FTP",
+                        "HTTP",
+                        "HTTPS",
+                        "ENDPOINT_HTTP",
+                        "ENDPOINT_HTTPS",
+                        "ENDPOINT_PRINTING",
+                        "ENDPOINT_APPLICATION",
+                        "ENDPOINT_REMOVABLE_MEDIA",
+                        "ENDPOINT_LAN",
+                        "ENDPOINT_DISCOVERY",
+                        "CASB_REAL_TIME",
+                        "CASB_NEAR_REAL_TIME",
+                        "CASB_DISCOVERY"
+                    ]
+                },
+                {
+                    "title": "Assigned To",
+                    "type": "text",
+                    "name": "assigned_to",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "placeholder": "e.g: admin",
+                    "tooltip": "Specify 'assigned to' to fetch data from Forcepoint DLP server.",
+                    "description": "Specify 'assigned to' to fetch data from Forcepoint DLP server."
+                },
+                {
+                    "title": "Tag",
+                    "type": "text",
+                    "name": "tag",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "placeholder": "e.g: my tag",
+                    "tooltip": "Specify 'tag' to fetch data from Forcepoint DLP server.",
+                    "description": "Specify 'tag' to fetch data from Forcepoint DLP server."
+                }
+            ]
+        },
+        {
+            "title": "Update Incident Status By Incident ID And Partition Index",
+            "operation": "update_incident_status_by_incident_id_and_partition_index",
+            "annotation": "update_incident_status_by_incident_id_and_partition_index",
+            "description": "Update Incident Status By Incident ID And Partition Index.",
+			"category": "investigation",
+			"output_schema": [{
+				"incidents": [
+				{
+					"id": "",
+					"severity": "",
+					"action": "",
+					"tag": "",
+					"status": "",
+					"source": 
+					{
+						"email_address": ""
+					}
+				}
+				],
+				"event_id": "",
+				"maximum_matches": "",
+				"transaction_size": "",
+				"analyzed_by": "",
+				"ignored_incidents": "",
+				"event_time": "",
+				"incident_time": "",
+				"channel": "",
+				"policies": "",
+				"partition_index": "",
+				"destination": "",
+				"detected_by": "",
+				"details": "",
+				"released_incident": "",
+				"violation_triggers": "",
+				"file_name": "",
+				"total_count": "",
+				"total_returned": "",
+				"not_found_ids": [""]
+					}
+			],
+            "parameters": [
+                {
+                    "title": "Type",
+                    "type": "select",
+                    "name": "type",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": null,
+                    "tooltip": "Select option 'INCIDENTS' or 'DISCOVERY'.",
+                    "options": [
+                        "INCIDENTS",
+                        "DISCOVERY"
+                    ],
+                    "onchange": {
+                        "INCIDENTS": [
+                            {
+                                "title": "Incident IDs",
+                                "type": "text",
+                                "name": "incident_id",
+                                "required": true,
+                                "visible": true,
+                                "editable": true,
+                                "value": null,
+                                "placeholder": "e.g. 2185301,2719665",
+                                "tooltip": "Specify array of the Incident IDs comma separated to be updated.",
+                                "description": "Specify array of the Incident IDs comma separated to be updated."
+                            },
+                            {
+                                "title": "Partition Index",
+                                "type": "integer",
+                                "name": "partition_index",
+                                "required": false,
+                                "visible": true,
+                                "editable": true,
+                                "value": null,
+                                "placeholder": "e.g. 2185301",
+                                "tooltip": "Specify 'partition index' to fetch data from Forcepoint DLP server.",
+                                "description": "Partition Index from the incidents table that are required to build a query. If this field is not provided on an INCIDENTS request, then the system should look up this parameter internally. In this case, the API will require more resources to complete the update action."
+                            }
+                        ],
+                        "DISCOVERY": [
+                            {
+                                "title": "Incident IDs",
+                                "type": "text",
+                                "name": "incident_id",
+                                "required": true,
+                                "visible": true,
+                                "editable": true,
+                                "value": null,
+                                "placeholder": "e.g. 2185301,2719665",
+                                "tooltip": "Specify array of the Incident IDs comma separated to be updated.",
+                                "description": "Specify array of the Incident IDs comma separated to be updated."
+                            }
+                        ]
+                    }
+                },
+                {
+                    "title": "Action Type",
+                    "type": "select",
+                    "name": "action_type",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify 'action type' to fetch data from Forcepoint DLP server.",
+                    "description": "Specify 'action type' to fetch data from Forcepoint DLP server.",
+                    "value": null,
+                    "options": [
+                        "STATUS",
+                        "SEVERITY",
+                        "ASSIGN_TO",
+                        "ADD_COMMENT",
+                        "TAG",
+                        "FALSE_POSITIVE"
+                    ],
+                    "onchange": {
+                        "STATUS": [
+                            {
+                                "title": "Value",
+                                "required": true,
+                                "visible": true,
+                                "editable": true,
+                                "type": "select",
+                                "name": "value",
+                                "tooltip": "Specify value to fetch data from Forcepoint DLP server.",
+                                "description": "Specify value to fetch data from Forcepoint DLP server.",
+                                "options": [
+                                    "NEW",
+                                    "IN_PROCESS",
+                                    "CLOSE",
+                                    "FALSE_POSITIVE",
+                                    "ESCALATED",
+                                    "Custom Status"
+                                ],
+                                "onchange": {
+                                      "Custom Status":[
+                                    {
+                                	    "title": "Enter Custom Status",
+                                	    "required": true,
+                                	    "visible": true,
+                                	    "editable": true,
+                                	    "type": "text",
+                                	    "name": "value",
+                                        "tooltip": "Specify value to fetch data from Forcepoint DLP server.",
+                                        "description": "Specify value to fetch data from Forcepoint DLP server."
+                                    }
+                                ]
+                              }
+                            }
+                        ],
+                        "SEVERITY": [
+                            {
+                                "title": "Value",
+                                "required": true,
+                                "visible": true,
+                                "editable": true,
+                                "type": "select",
+                                "name": "value",
+                                "description": "Specify value to fetch data from Forcepoint DLP server.",
+                                "tooltip": "Specify value to fetch data from Forcepoint DLP server.",
+                                "options": [
+                                    "HIGH",
+                                    "MEDIUM",
+                                    "LOW"
+                                ]
+                            }
+                        ],
+                        "ASSIGN_TO": [
+                            {
+                                "title": "Value",
+                                "required": true,
+                                "visible": true,
+                                "editable": true,
+                                "type": "text",
+                                "name": "value",
+                                "placeholder": "E.g. admin name",
+                                "description": "Specify value to fetch data from Forcepoint DLP server.",
+                                "tooltip": "Specify value to fetch data from Forcepoint DLP server."
+                            }
+                        ],
+                        "ADD_COMMENT": [
+                            {
+                                "title": "Value",
+                                "required": true,
+                                "visible": true,
+                                "editable": true,
+                                "type": "text",
+                                "name": "value",
+                                "placeholder": "Enter Comment",
+                                "description": "Specify value to fetch data from Forcepoint DLP server.",
+                                "tooltip": "Specify value to fetch data from Forcepoint DLP server."
+                            }
+                        ],
+                        "TAG": [
+                            {
+                                "title": "Value",
+                                "required": true,
+                                "visible": true,
+                                "editable": true,
+                                "type": "text",
+                                "name": "value",
+                                "placeholder": "Enter Tag Name Max 100 Chars.",
+                                "description": "Enter Tag Name Max 100 Chars.",
+                                "tooltip": "Enter Tag Name Max 100 Chars.",
+                                "max": "2"
+                            }
+                        ],
+                        "FALSE_POSITIVE": [
+                            {
+                                "title": "Value",
+                                "required": true,
+                                "visible": true,
+                                "editable": true,
+                                "type": "select",
+                                "name": "value",
+                                "description": "Specify value to fetch data from Forcepoint DLP server.",
+                                "tooltip": "Specify value to fetch data from Forcepoint DLP server.",
+                                "options": [
+                                    "1",
+                                    "0"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ],
+            "open": false,
+            "category": "investigation"
+        },
+        {
+            "title": "Update Incident Status By Scan Partitions",
+            "operation": "update_incident_status_by_scan_partitions",
+            "annotation": "update_incident_status_by_scan_partitions",
+            "description": "Update incident status by scan partitions",
+			"category": "investigation",
+			"output_schema": [{
+				"incidents": [
+				{
+					"id": "",
+					"severity": "",
+					"action": "",
+					"tag": "",
+					"status": "",
+					"source": 
+					{
+						"email_address": ""
+					}
+				}
+				],
+				"event_id": "",
+				"maximum_matches": "",
+				"transaction_size": "",
+				"analyzed_by": "",
+				"ignored_incidents": "",
+				"event_time": "",
+				"incident_time": "",
+				"channel": "",
+				"policies": "",
+				"partition_index": "",
+				"destination": "",
+				"detected_by": "",
+				"details": "",
+				"released_incident": "",
+				"violation_triggers": "",
+				"file_name": "",
+				"total_count": "",
+				"total_returned": "",
+				"not_found_ids": [""]
+					}
+			],
+            "parameters": [
+                {
+                    "title": "Type",
+                    "type": "select",
+                    "name": "type",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": null,
+                    "tooltip": "Select option 'INCIDENTS' or 'DISCOVERY'.",
+                    "options": [
+                        "INCIDENTS",
+                        "DISCOVERY"
+                    ],
+                    "onchange": {
+                        "INCIDENTS": [
+                            {
+                                "title": "Incident IDs",
+                                "type": "text",
+                                "name": "incident_id",
+                                "required": true,
+                                "visible": true,
+                                "editable": true,
+                                "value": null,
+                                "placeholder": "e.g. 2185301,2719665",
+                                "tooltip": "Specify array of the Incident IDs comma separated to be updated.",
+                                "description": "Specify array of the Incident IDs comma separated to be updated."
+                            },
+                            {
+                                "title": "Partition Index",
+                                "type": "integer",
+                                "name": "partition_index",
+                                "required": false,
+                                "visible": true,
+                                "editable": true,
+                                "value": null,
+                                "placeholder": "e.g. 2185301",
+                                "tooltip": "Specify 'partition index' to fetch data from Forcepoint DLP server.",
+                                "description": "Partition Index from the incidents table that are required to build a query. If this field is not provided on an INCIDENTS request, then the system should look up this parameter internally. In this case, the API will require more resources to complete the update action."
+                            }
+                        ],
+                        "DISCOVERY": [
+                            {
+                                "title": "Incident IDs",
+                                "type": "text",
+                                "name": "incident_id",
+                                "required": true,
+                                "visible": true,
+                                "editable": true,
+                                "value": null,
+                                "placeholder": "e.g. 2185301,2719665",
+                                "tooltip": "Specify array of the Incident IDs comma separated to be updated.",
+                                "description": "Specify array of the Incident IDs comma separated to be updated."
+                            }
+                        ]
+                    }
+                },
+                {
+                    "title": "Action Type",
+                    "type": "select",
+                    "name": "action_type",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify 'action type' to fetch data from Forcepoint DLP server.",
+                    "description": "Specify 'action type' to fetch data from Forcepoint DLP server.",
+                    "value": null,
+                    "options": [
+                        "STATUS",
+                        "SEVERITY",
+                        "ASSIGN_TO",
+                        "ADD_COMMENT",
+                        "TAG",
+                        "FALSE_POSITIVE"
+                    ],
+                    "onchange": {
+                        "STATUS": [
+                            {
+                                "title": "Value",
+                                "required": true,
+                                "visible": true,
+                                "editable": true,
+                                "type": "select",
+                                "name": "value",
+                                "tooltip": "Specify value to fetch data from Forcepoint DLP server.",
+                                "description": "Specify value to fetch data from Forcepoint DLP server.",
+                                "options": [
+                                    "NEW",
+                                    "IN_PROCESS",
+                                    "CLOSE",
+                                    "FALSE_POSITIVE",
+                                    "ESCALATED",
+                                    "Custom Status"
+                                ],
+                                "onchange": {
+                                      "Custom Status":[
+                                    {
+                                	    "title": "Enter Custom Status",
+                                	    "required": true,
+                                	    "visible": true,
+                                	    "editable": true,
+                                	    "type": "text",
+                                	    "name": "value",
+                                        "tooltip": "Specify value to fetch data from Forcepoint DLP server.",
+                                        "description": "Specify value to fetch data from Forcepoint DLP server."
+                                    }
+                                ]
+                              }
+                            }
+                        ],
+                        "SEVERITY": [
+                            {
+                                "title": "Value",
+                                "required": true,
+                                "visible": true,
+                                "editable": true,
+                                "type": "select",
+                                "name": "value",
+                                "description": "Specify value to fetch data from Forcepoint DLP server.",
+                                "tooltip": "Specify value to fetch data from Forcepoint DLP server.",
+                                "options": [
+                                    "HIGH",
+                                    "MEDIUM",
+                                    "LOW"
+                                ]
+                            }
+                        ],
+                        "ASSIGN_TO": [
+                            {
+                                "title": "Value",
+                                "required": true,
+                                "visible": true,
+                                "editable": true,
+                                "type": "text",
+                                "name": "value",
+                                "placeholder": "E.g. admin name",
+                                "description": "Specify value to fetch data from Forcepoint DLP server.",
+                                "tooltip": "Specify value to fetch data from Forcepoint DLP server."
+                            }
+                        ],
+                        "ADD_COMMENT": [
+                            {
+                                "title": "Value",
+                                "required": true,
+                                "visible": true,
+                                "editable": true,
+                                "type": "text",
+                                "name": "value",
+                                "placeholder": "Enter Comment",
+                                "description": "Specify value to fetch data from Forcepoint DLP server.",
+                                "tooltip": "Specify value to fetch data from Forcepoint DLP server."
+                            }
+                        ],
+                        "TAG": [
+                            {
+                                "title": "Value",
+                                "required": true,
+                                "visible": true,
+                                "editable": true,
+                                "type": "text",
+                                "name": "value",
+                                "placeholder": "Enter Tag Name Max 100 Chars.",
+                                "description": "Enter Tag Name Max 100 Chars.",
+                                "tooltip": "Enter Tag Name Max 100 Chars.",
+                                "max": "2"
+                            }
+                        ],
+                        "FALSE_POSITIVE": [
+                            {
+                                "title": "Value",
+                                "required": true,
+                                "visible": true,
+                                "editable": true,
+                                "type": "select",
+                                "name": "value",
+                                "description": "Specify value to fetch data from Forcepoint DLP server.",
+                                "tooltip": "Specify value to fetch data from Forcepoint DLP server.",
+                                "options": [
+                                    "1",
+                                    "0"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "title": "Scan Partitions",
+                    "type": "select",
+                    "name": "scan_partitions",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": "NONE",
+                    "description": "Specify 'scan partitions' to fetch data from Forcepoint DLP server.",
+                    "tooltip": "Specify 'scan partitions' to fetch data from Forcepoint DLP server.",
+                    "options": [
+                        "NONE",
+                        "ALL",
+                        "LAST_ACTIVE"
+                    ]
+                }
+            ],
+            "open": false,
+            "category": "investigation"
+        },
+        {
+            "title": "Update Incident Status By Event IDs",
+            "operation": "update_incident_status_by_event_ids",
+            "annotation": "update_incident_status_by_event_ids",
+            "description": "Update incident status by event ids",
+			"category": "investigation",
+			"output_schema": [{
+				"incidents": [
+				{
+					"id": "",
+					"severity": "",
+					"action": "",
+					"tag": "",
+					"status": "",
+					"source": 
+					{
+						"email_address": ""
+					}
+				}
+				],
+				"event_id": "",
+				"maximum_matches": "",
+				"transaction_size": "",
+				"analyzed_by": "",
+				"ignored_incidents": "",
+				"event_time": "",
+				"incident_time": "",
+				"channel": "",
+				"policies": "",
+				"partition_index": "",
+				"destination": "",
+				"detected_by": "",
+				"details": "",
+				"released_incident": "",
+				"violation_triggers": "",
+				"file_name": "",
+				"total_count": "",
+				"total_returned": "",
+				"not_found_ids": [""]
+					}
+			],
+            "parameters": [
+                {
+                    "title": "Type",
+                    "type": "select",
+                    "name": "type",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": null,
+                    "tooltip": "Select option 'INCIDENTS' or 'DISCOVERY'.",
+                    "options": [
+                        "INCIDENTS",
+                        "DISCOVERY"
+                    ]
+                },
+                {
+                    "title": "Event IDs",
+                    "type": "text",
+                    "name": "event_ids",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "description": "Specify 'event ids' to fetch data from Forcepoint DLP server.",
+                    "tooltip": "Specify 'event ids' to fetch data from Forcepoint DLP server."
+                },
+                {
+                    "title": "Action Type",
+                    "type": "select",
+                    "name": "action_type",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify 'action type' to fetch data from Forcepoint DLP server.",
+                    "description": "Specify 'action type' to fetch data from Forcepoint DLP server.",
+                    "value": null,
+                    "options": [
+                        "STATUS",
+                        "SEVERITY",
+                        "ASSIGN_TO",
+                        "ADD_COMMENT",
+                        "TAG",
+                        "FALSE_POSITIVE"
+                    ],
+                    "onchange": {
+                        "STATUS": [
+                            {
+                                "title": "Value",
+                                "required": true,
+                                "visible": true,
+                                "editable": true,
+                                "type": "select",
+                                "name": "value",
+                                "tooltip": "Specify value to fetch data from Forcepoint DLP server.",
+                                "description": "Specify value to fetch data from Forcepoint DLP server.",
+                                "options": [
+                                    "NEW",
+                                    "IN_PROCESS",
+                                    "CLOSE",
+                                    "FALSE_POSITIVE",
+                                    "ESCALATED",
+                                    "Custom Status"
+                                ],
+                                "onchange": {
+                                      "Custom Status":[
+                                    {
+                                	    "title": "Enter Custom Status",
+                                	    "required": true,
+                                	    "visible": true,
+                                	    "editable": true,
+                                	    "type": "text",
+                                	    "name": "value",
+                                        "tooltip": "Specify value to fetch data from Forcepoint DLP server.",
+                                        "description": "Specify value to fetch data from Forcepoint DLP server."
+                                    }
+                                ]
+                              }
+                            }
+                        ],
+                        "SEVERITY": [
+                            {
+                                "title": "Value",
+                                "required": true,
+                                "visible": true,
+                                "editable": true,
+                                "type": "select",
+                                "name": "value",
+                                "description": "Specify value to fetch data from Forcepoint DLP server.",
+                                "tooltip": "Specify value to fetch data from Forcepoint DLP server.",
+                                "options": [
+                                    "HIGH",
+                                    "MEDIUM",
+                                    "LOW"
+                                ]
+                            }
+                        ],
+                        "ASSIGN_TO": [
+                            {
+                                "title": "Value",
+                                "required": true,
+                                "visible": true,
+                                "editable": true,
+                                "type": "text",
+                                "name": "value",
+                                "placeholder": "E.g. admin name",
+                                "description": "Specify value to fetch data from Forcepoint DLP server.",
+                                "tooltip": "Specify value to fetch data from Forcepoint DLP server."
+                            }
+                        ],
+                        "ADD_COMMENT": [
+                            {
+                                "title": "Value",
+                                "required": true,
+                                "visible": true,
+                                "editable": true,
+                                "type": "text",
+                                "name": "value",
+                                "placeholder": "Enter Comment",
+                                "description": "Specify value to fetch data from Forcepoint DLP server.",
+                                "tooltip": "Specify value to fetch data from Forcepoint DLP server."
+                            }
+                        ],
+                        "TAG": [
+                            {
+                                "title": "Value",
+                                "required": true,
+                                "visible": true,
+                                "editable": true,
+                                "type": "text",
+                                "name": "value",
+                                "placeholder": "Enter Tag Name Max 100 Chars.",
+                                "description": "Enter Tag Name Max 100 Chars.",
+                                "tooltip": "Enter Tag Name Max 100 Chars.",
+                                "max": "2"
+                            }
+                        ],
+                        "FALSE_POSITIVE": [
+                            {
+                                "title": "Value",
+                                "required": true,
+                                "visible": true,
+                                "editable": true,
+                                "type": "select",
+                                "name": "value",
+                                "description": "Specify value to fetch data from Forcepoint DLP server.",
+                                "tooltip": "Specify value to fetch data from Forcepoint DLP server.",
+                                "options": [
+                                    "1",
+                                    "0"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ],
+            "open": false,
+            "category": "investigation"
+        }
+    ]
+}
