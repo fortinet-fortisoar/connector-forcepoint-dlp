@@ -9,7 +9,7 @@
     "cs_compatible": true,
     "cs_approved": false,
     "category": "Network Security",
-    "help_online": "https://github.com/jitesh-spryiq/connector-forcepoint-dlp/blob/develop/docs/ForcePointDLPConnectorDoc.md",
+    "help_online": "https://github.com/fortinet-fortisoar/connector-forcepoint-dlp/blob/develop/docs/ForcePointDLPConnectorDoc.md",
     "configuration": {
         "fields": [
             {
@@ -19,7 +19,6 @@
                 "required": true,
                 "visible": true,
                 "editable": true,
-                "value": "",
                 "placeholder": "Server IP Address or Sever Name ",
                 "tooltip": "Specify the URL of the Forcepoint dlp server to connect and perform automated operations.",
                 "description": "Specify the URL of the Forcepoint dlp server to connect and perform automated operations."
@@ -31,7 +30,6 @@
                 "required": true,
                 "visible": true,
                 "editable": true,
-                "value": "",
                 "tooltip": "Username used to access the Forcepoint DLP server to which you will connect and perform the automated operations.",
                 "description": "Username used to access the Forcepoint DLP server to which you will connect and perform the automated operations."
             },
@@ -42,7 +40,6 @@
                 "required": true,
                 "visible": true,
                 "editable": true,
-                "value": "",
                 "tooltip": "Password used to access the Forcepoint DLP server to which you will connect and perform the automated operations.",
                 "description": "Password used to access the Forcepoint DLP server to which you will connect and perform the automated operations."
             },
@@ -149,7 +146,6 @@
                     "required": true,
                     "visible": true,
                     "editable": true,
-                    "value": "",
                     "placeholder": "e.g:123,323",
                     "description": "Specify the ids comma separated value that you want to retrieve from Forecpoint DLP.",
                     "tooltip": "Specify the ids comma separated value that you want to retrieve from Forecpoint DLP."
@@ -623,7 +619,6 @@
                     "required": true,
                     "visible": true,
                     "editable": true,
-                    "value": "",
                     "placeholder": "e.g: PCI",
                     "tooltip": "Specify 'policies' to fetch data from Forcepoint DLP server.",
                     "description": "Specify 'policies' to fetch data from Forcepoint DLP server."
@@ -740,7 +735,6 @@
                     "required": false,
                     "visible": true,
                     "editable": true,
-                    "value": "",
                     "placeholder": "e.g: Policy Engine 100190120a",
                     "tooltip": "Specify 'Policy Engine ID' to fetch data from Forcepoint DLP server.",
                     "description": "Specify 'Policy Engine ID' to fetch data from Forcepoint DLP server."
@@ -752,7 +746,6 @@
                     "required": false,
                     "visible": true,
                     "editable": true,
-                    "value": "",
                     "placeholder": "e.g: 5121411628328991975",
                     "tooltip": "Specify 'event id' to fetch data from Forcepoint DLP server.",
                     "description": "Specify 'event id' to fetch data from Forcepoint DLP server."
@@ -764,7 +757,6 @@
                     "required": false,
                     "visible": true,
                     "editable": true,
-                    "value": "",
                     "placeholder": "e.g: Windows Portable Device (WPD)",
                     "tooltip": "Specify 'destination' to fetch data from Forcepoint DLP server.",
                     "description": "Specify 'destination' to fetch data from Forcepoint DLP server."
@@ -776,7 +768,6 @@
                     "required": false,
                     "visible": true,
                     "editable": true,
-                    "value": "",
                     "placeholder": "e.g: PCI",
                     "tooltip": "Specify 'policies' to fetch data from Forcepoint DLP server.",
                     "description": "Specify 'policies' to fetch data from Forcepoint DLP server."
@@ -811,7 +802,6 @@
                     "required": false,
                     "visible": true,
                     "editable": true,
-                    "value": "",
                     "placeholder": "e.g: DESKTOP-3NG4NN6\\Lenovo",
                     "tooltip": "Specify 'source' to fetch data from Forcepoint DLP server.",
                     "description": "Specify 'source' to fetch data from Forcepoint DLP server."
@@ -901,7 +891,6 @@
                     "required": false,
                     "visible": true,
                     "editable": true,
-                    "value": "",
                     "placeholder": "e.g: admin",
                     "tooltip": "Specify 'assigned to' to fetch data from Forcepoint DLP server.",
                     "description": "Specify 'assigned to' to fetch data from Forcepoint DLP server."
@@ -913,7 +902,6 @@
                     "required": false,
                     "visible": true,
                     "editable": true,
-                    "value": "",
                     "placeholder": "e.g: my tag",
                     "tooltip": "Specify 'tag' to fetch data from Forcepoint DLP server.",
                     "description": "Specify 'tag' to fetch data from Forcepoint DLP server."
@@ -1459,7 +1447,6 @@
                     "required": true,
                     "visible": true,
                     "editable": true,
-                    "value": "",
                     "description": "Specify 'event ids' to fetch data from Forcepoint DLP server.",
                     "tooltip": "Specify 'event ids' to fetch data from Forcepoint DLP server."
                 },
