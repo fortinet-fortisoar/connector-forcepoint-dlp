@@ -13,7 +13,6 @@ urllib3.disable_warnings()
 logger = get_logger('forcepoint-dlp')
 
 class ForcePointDlp(object):
-    
     def __init__(self, config):       
         self.host = config.get('server_url', None)
         self.user = config.get('username', None)
@@ -76,6 +75,7 @@ class ForcePointDlp(object):
             logger.exception('Health check failed with: {0}'.format(err))
             raise ConnectorError('Health check failed with: {0}'.format(err))    
 
+
 def _check_health(config):
     try:
         obj = ForcePointDlp(config)
@@ -87,7 +87,8 @@ def _check_health(config):
     except Exception as err:
         logger.exception('Health check failed with: {0}'.format(err))
         raise ConnectorError('Health check failed with: {0}'.format(err))
-            
+
+
 def get_list_of_incidents_by_filter(config, params):
     try:
         obj = ForcePointDlp(config)
@@ -119,7 +120,9 @@ def get_list_of_incidents_by_filter(config, params):
             return logger.error('Failed to obtain access token.') 
     except ConnectorError as e:
         logger.error(f'Failed with error: {e}')
-    
+        raise ConnectorError(f'Failed with error: {e}')
+
+
 def get_incidents_by_ids(config, params):
     try:
         obj = ForcePointDlp(config)
@@ -137,6 +140,7 @@ def get_incidents_by_ids(config, params):
             return logger.error('Failed to obtain access token.')
     except ConnectorError as e:
         logger.error(f'Failed with error: {e}')
+        raise ConnectorError(f'Failed with error: {e}')
 
 
 def get_incidents_by_date_range(config, params):
@@ -156,7 +160,9 @@ def get_incidents_by_date_range(config, params):
             return logger.error('Failed to obtain access token.') 
     except ConnectorError as e:
         logger.error(f'Failed with error: {e}')
-        
+        raise ConnectorError(f'Failed with error: {e}')
+
+
 def get_incidents_by_action(config, params):
     try:
         obj = ForcePointDlp(config)
@@ -175,6 +181,8 @@ def get_incidents_by_action(config, params):
             return logger.error('Failed to obtain access token.') 
     except ConnectorError as e:
         logger.error(f'Failed with error: {e}')
+        raise ConnectorError(f'Failed with error: {e}')
+
 
 def get_incidents_by_severity(config, params):
     try:
@@ -194,7 +202,9 @@ def get_incidents_by_severity(config, params):
             return logger.error('Failed to obtain access token.') 
     except ConnectorError as e:
         logger.error(f'Failed with error: {e}')
-        
+        raise ConnectorError(f'Failed with error: {e}')
+
+
 def get_incidents_by_status(config, params):
     try:
         obj = ForcePointDlp(config)
@@ -213,6 +223,8 @@ def get_incidents_by_status(config, params):
             return logger.error('Failed to obtain access token.') 
     except ConnectorError as e:
         logger.error(f'Failed with error: {e}')
+        raise ConnectorError(f'Failed with error: {e}')
+
 
 def get_incidents_by_policy_name(config, params):
     try:
@@ -231,7 +243,9 @@ def get_incidents_by_policy_name(config, params):
         else :
             return logger.error('Failed to obtain access token.') 
     except ConnectorError as e:
-        logger.error(f'Failed with error: {e}')        
+        logger.error(f'Failed with error: {e}')
+        raise ConnectorError(f'Failed with error: {e}')
+
 
 def update_incident_status_by_incident_id_and_partition_index(config, params):
     try:
@@ -266,7 +280,9 @@ def update_incident_status_by_incident_id_and_partition_index(config, params):
         else :
             return logger.error('Failed to obtain access token.') 
     except ConnectorError as e:
-        logger.error(f'Failed with error: {e}')   
+        logger.error(f'Failed with error: {e}')
+        raise ConnectorError(f'Failed with error: {e}')
+
 
 def update_incident_status_by_scan_partitions(config, params):
     try:
@@ -303,8 +319,10 @@ def update_incident_status_by_scan_partitions(config, params):
         else :
             return logger.error('Failed to obtain access token.') 
     except ConnectorError as e:
-        logger.error(f'Failed with error: {e}')   
-        
+        logger.error(f'Failed with error: {e}')
+        raise ConnectorError(f'Failed with error: {e}')
+
+
 def update_incident_status_by_event_ids(config, params):
     try:
         obj = ForcePointDlp(config)
@@ -324,7 +342,10 @@ def update_incident_status_by_event_ids(config, params):
         else :
             return logger.error('Failed to obtain access token.') 
     except ConnectorError as e:
-        logger.error(f'Failed with error: {e}')               
+        logger.error(f'Failed with error: {e}')
+        raise ConnectorError(f'Failed with error: {e}')
+
+
 operations = {
     'get_list_of_incidents_by_filter': get_list_of_incidents_by_filter,
     'get_incidents_by_ids': get_incidents_by_ids,
