@@ -9,7 +9,7 @@
     "cs_compatible": true,
     "cs_approved": false,
     "category": "Network Security",
-    "help_online": "https://github.com/fortinet-fortisoar/connector-forcepoint-dlp/blob/develop/docs/ForcePointDLPConnectorDoc.md",
+    "help_online": "https://github.com/fortinet-fortisoar/connector-forcepoint-dlp/blob/release/1.0.0/docs/ForcePointDLPConnectorDoc.md",
     "configuration": {
         "fields": [
             {
